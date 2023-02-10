@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>前言</title>
+    <url>/2023/02/04/%E5%89%8D%E8%A8%80/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;在正式开始介绍搭建博客的方法之前，你可以阅读这篇文章来了解搭建博客所用到的各项工具以及博客站点的运行机制。</p>
+<p>&emsp;&emsp;当然，如果你只想尽快着手搭建博客，你也可以跳过这篇文章。</p>
+<span id="more"></span>
+
+<h3 id="web基础知识"><a href="#web基础知识" class="headerlink" title="web基础知识"></a>web基础知识</h3><p>&emsp;&emsp;一个博客站点由很多网页组成。</p>
+<p>&emsp;&emsp;一个静态网页中的元素（按钮，文字，图片，输入框等）由.html文件给出，元素的排列方式由.css文件给出，与元素互动所需的代码在.js文件中。一个网页对应一个.html文件，可对应多个.css和.js文件。显然，一个想写博客的人不一定愿意去处理这些底层的代码细节。如果你不借助任何框架创建博客，你就必须亲自编写这三种文件（每种语法都不一样！）以指定博客中每一个网页的每一处细节，这是个非常繁琐的过程，你的大量时间和精力会花在对博客网页本身的处理上。</p>
+<p>&emsp;&emsp;另外，如果你想让你的网页被互联网上的其他人看到，你还必须拥有存放网页的服务器，这是一笔不小的开支。</p>
+
+<h3 id="Github-pages"><a href="#Github-pages" class="headerlink" title="Github pages"></a>Github pages</h3><p>&emsp;&emsp;Github是一个面向开源及私有软件项目的托管平台，其实就是一个存放代码的云仓库。</p>
+
+<p>&emsp;&emsp;而Github pages是一个静态站点托管服务，如果你把自己编写的博客站点文件（.html .css .js）等文件上传到你的Github仓库中，Github pages功能会自动地生成相应的网站，你可以直接通过 yourname.github.io 访问到你所上传的站点，无需购买服务器等，一切免费。</p>
+
+<p>&emsp;&emsp;不过，也有相应的限制：</p>
+
+<blockquote>
+<p>GitHub Pages 源仓库建议限制为1GB；<br>发布的 GitHub Pages 网站可能不超过1GB；<br>GitHub Pages 网站每月的带宽限制为100GB；<br>GitHub Pages 网站每小时限制10个软件。</p>
+</blockquote>
+<p>&emsp;&emsp;当然，这些对于我们的博客几乎没有影响。</p>
+
+<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p>&emsp;&emsp;Hexo是一套博客框架，它对用户屏蔽了所有的代码底层细节，通过简单的配置之后（集中在对config.yml配置文件的修改），你只需要几条固定的指令就可以发送一篇文章。这使得用户可以将精力专注于写文章上。</p>
+<p>&emsp;&emsp;另外，Hexo还拥有完整的中文文档，讨论社区的汉语使用者居多，出现问题时查阅解决方法相对方便。</p>
+<p>&emsp;&emsp;Hexo需要安装Git（版本控制系统，将你的博客从本地快速推送到网络上）和Node.js环境（本地测试），安装方法将在下一章介绍。</p>
+
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>建站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客建站日记</title>
+    <url>/2023/02/01/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<p>本文记录了一个基于 <strong>github</strong> + <strong>Hexo</strong> 的博客站点从零建成的过程，某些需要¥的环节用<font color= orange>橙色字体</font>标出<br>之后<font color= #C4C4C4><del>或许</del></font>会<font color= #C4C4C4><del>鸽</del></font>陆续更新每个步骤的详细实现方法。</p>
+<span id="more"></span>
+
+<h1 id="131’s-blog-建站Todo："><a href="#131’s-blog-建站Todo：" class="headerlink" title="131’s blog 建站Todo："></a><em><strong>131’s blog</strong></em> 建站Todo：</h1><h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 安装依赖环境</li>
+<li><input checked="" disabled="" type="checkbox"> 建站并部署至github仓库</li>
+<li><input checked="" disabled="" type="checkbox"> 启用next主题</li>
+</ul>
+<h3 id="博客功能完善"><a href="#博客功能完善" class="headerlink" title="博客功能完善"></a>博客功能完善</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 设置博客语言和菜单</li>
+<li><input checked="" disabled="" type="checkbox"> 添加搜索功能</li>
+<li><input checked="" disabled="" type="checkbox"> 添加评论功能</li>
+<li><input checked="" disabled="" type="checkbox"> 添加leancloud阅读次数统计</li>
+<li><input checked="" disabled="" type="checkbox"> 添加站点统计</li>
+</ul>
+<h3 id="站点访问加速"><a href="#站点访问加速" class="headerlink" title="站点访问加速"></a>站点访问加速</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 开启JavaScript第三方库的CDN加速</li>
+<li><input checked="" disabled="" type="checkbox"> 将站点挂载至vercel</li>
+<li><input checked="" disabled="" type="checkbox"> <font color= orange>购买域名并进行DNS解析 <strong>CNY¥8&#x2F;年</strong> </font></li>
+<li><input disabled="" type="checkbox"> 域名备案，<font color= orange>购买CDN流量进行国内访问加速 <strong>CNY¥?&#x2F;年</strong></font></li>
+<li><input disabled="" type="checkbox"> 资源压缩</li>
+</ul>
+<h3 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a>个性化设置</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 添加背景动画效果</li>
+<li><input disabled="" type="checkbox"> 设置Live2D看板娘</li>
+<li><input disabled="" type="checkbox"> 设置光标点击动画</li>
+<li><input disabled="" type="checkbox"> 写很多博客<font color= #C4C4C4><del>写内容真没有折腾站点本身有意思</del></font></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>建站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>启用主题</title>
+    <url>/2023/02/04/%E5%90%AF%E7%94%A8%E4%B8%BB%E9%A2%98/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>安装依赖</title>
+    <url>/2023/02/04/%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96/</url>
+    <content><![CDATA[<p>这篇文章会帮助你安装博客所需的本地环境。<br>安装过程中建议准备好梯子，或者修改host文件保证能够访问github。<br><a href="https://git-scm.com/download/win" target="_blank">点击这里（此处施工中，后续加入）</a>查看如何修改host。</p>
+<span id="more"></span>
+
+<h2 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h2><p><a href="https://nodejs.org/en/download/" target="_blank">点击这里</a>进入官网下载并安装即可，安装过程可以全部选择默认选项。</p>
+<p><strong>验证安装</strong>：打开cmd窗口（win+R键，输入cmd），在命令行输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>若返回版本号说明安装成功。</p>
+<h2 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2.安装Git"></a>2.安装Git</h2><p><a href="https://git-scm.com/download/win" target="_blank">点击这里</a>进入官网下载并安装，同上，安装过程可以全部选择默认选项。</p>
+<p><strong>验证安装</strong>：在命令行输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git -v</span><br></pre></td></tr></table></figure>
+<p>若返回版本号说明安装成功</p>
+<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2><p>从这步开始建议打开你的梯子。如果没有，可以用淘宝团队的镜像源进行加速：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>新建一个文件夹，此处将是你以后存放博客站点的文件夹。</p>
+<p>打开该文件夹，<font color= blue>在空白处点击右键，选择Git Bash Here</font></p>
+<div class="note info">
+            <p>请记住这步操作，后续很多操作都需要在Git Bash Here的黑窗口中输入命令。 </p>
+          </div>
+
+
+<p>在弹出的窗口中输入命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p><strong>验证安装</strong>：输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-创建github仓库"><a href="#4-创建github仓库" class="headerlink" title="4.创建github仓库"></a>4.创建github仓库</h2><p><a href="https://github.com/" target="_blank">点击这里</a>进入官网，注册一个账号并登录，点击右上角加号选择New repository创建新仓库，仓库名（Repository name）必须为”用户名.github.io”，这里的用户名必须和你注册时的用户名相同。</p>
+<h2 id="5-将与github仓库与本地绑定"><a href="#5-将与github仓库与本地绑定" class="headerlink" title="5.将与github仓库与本地绑定"></a>5.将与github仓库与本地绑定</h2><p>打开Git Bash Here窗口，输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的GitHub用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的GitHub注册邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>生成ssh密钥文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的GitHub注册邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>若出现提示要求你输入密码等，可以直接按回车，默认不需要设置密码。</p>
+<p>在C:\Users\用户名.ssh文件夹中找到生成的id_rsa.pub密钥，将内容全部复制。</p>
+<p>在github上点击个人头像→Settings→SSH and GPG keys→New SSH Key，新建一个ssh，名字随意，将复制的id_rsa.pub密钥粘贴进key中。</p>
+<p><strong>验证</strong>：在黑窗口输入以下指令，不要修改</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>若返回值中显示了你的用户名，说明配置成功。</p>
+<div class="note default">
+            <p><font color= #C4C4C4>这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</font></p>
+          </div>
+
+
+
+<p>至此，搭建博客所需的所有环境已配置完毕。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>建站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>建站并部署</title>
+    <url>/2023/02/04/%E5%BB%BA%E7%AB%99%E5%B9%B6%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h2 id="建站并部署"><a href="#建站并部署" class="headerlink" title="建站并部署"></a>建站并部署</h2><p>准备工作就绪之后，剩下的工作就很简单了。</p>
+<span id="more"></span>
+
+<h3 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1.初始化"></a>1.初始化</h3><p>打开你存放博客的文件夹，右键空白区域选择git bash here，在命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>如果初始化卡在了Install dependencies，按Ctrl+C退出当前进程，输入新命令:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>如果一切顺利，本地博客站点已经被建立好了</p>
+<h3 id="2-本地测试"><a href="#2-本地测试" class="headerlink" title="2.本地测试"></a>2.本地测试</h3><p>接下来分别用以下几条指令进行测试：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>如果返回了<a href="http://localhost:4000/%EF%BC%8C%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A1%AB%E5%85%A5%E8%AF%A5%E5%9C%B0%E5%9D%80%EF%BC%8C%E8%8B%A5%E4%BD%A0%E7%9C%8B%E5%88%B0%E4%BA%86Hexo%E7%9A%84%E9%BB%98%E8%AE%A4%E6%A8%A1%E6%9D%BF%EF%BC%8C%E8%AF%B4%E6%98%8E%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F%E3%80%82">http://localhost:4000/，打开浏览器填入该地址，若你看到了Hexo的默认模板，说明配置成功。</a></p>
+<h3 id="3-推送到github仓库"><a href="#3-推送到github仓库" class="headerlink" title="3.推送到github仓库"></a>3.推送到github仓库</h3><p>很简单，一行指令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>执行完毕后，你可以在数分钟后访问 <a href="http://yourname.github.io/">http://yourname.github.io/</a> 在互联网上查看刚建立好的博客了。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>建站</tag>
+      </tags>
+  </entry>
+</search>
